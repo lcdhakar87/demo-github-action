@@ -25,6 +25,10 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Run Unit Tests
+      run: mvn test
+      
     - name: Build with Maven
       run: mvn clean install -DskipTests 
     
@@ -41,5 +45,6 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/demo-github-action:latest
+        
     - name: Trigger Render Deploy
       run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
