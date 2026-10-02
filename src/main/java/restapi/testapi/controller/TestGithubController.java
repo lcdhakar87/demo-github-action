@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestGithubController {
     @GetMapping
     public String test() {
-       return "Successfully!. 936";
+       return "Successfully!. 9361";
     }
 }
